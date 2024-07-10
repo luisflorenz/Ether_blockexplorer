@@ -18,7 +18,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function fetchBlockNumber() {
+    async function getBlockNumber() {
       try {
         const blockNumber = await alchemy.core.getBlockNumber();
         setBlockNumber(blockNumber);
@@ -27,7 +27,7 @@ function App() {
       }
     }
 
-    fetchBlockNumber();
+    getBlockNumber();
   }, []);
 
   const handleAddressChange = (e) => {
